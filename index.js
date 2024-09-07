@@ -7,7 +7,9 @@ const morgan = require('morgan')
 const { default: mongoose } = require('mongoose')
 const cors = require('cors');
 const routerUser = require("./src/routes/UserRoute")
+const routerPoll = require("./src/routes/PollRoute")
 const routerVote = require("./src/routes/VoteRoute")
+
 app.use(bodyParser.json({limit: '50mb'}))
 
 
@@ -19,6 +21,8 @@ app.use(morgan('common'))
 
 
 app.use('/api/user',routerUser)
+
+app.use('/api/user',routerPoll)
 
 app.use('/api/user',routerVote)
 
