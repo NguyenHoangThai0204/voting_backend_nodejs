@@ -13,5 +13,7 @@ router.get("/findAllUser", userController.findAllUser);
 // {"email":"xinchao","password":"xinhaha"}
 router.post("/login", userController.loginUser);
 
+// Get: http://localhost:3000/api/user/getUserByid/
+router.post("/findByIdUser", userController.findByIdUser);
 
 module.exports = router;

@@ -77,22 +77,35 @@ const findAllUser = async( req, res)=>{
     }
 }
 
-const findByIdUser = async( req, res )=>{
+const findByIdUser = async (req, res) => {
     try {
-        const id = req.params.id;
-        const user
-            = await User.findById(id);
+        const { id } = req.body; // Lấy id từ body
+        if (!id) {
+            return res.status(400).json({
+                status: "Err",
+                message: "ID is required."
+            });
+        }
+        
+        const user = await User.findById(id);
+        if (!user) {
+            return res.status(404).json({
+                status: "Err",
+                message: "User not found."
+            });
+        }
+        
         res.status(200).json({
             status: "OK",
             message: "Success",
             data: user
         });
-    }
-    catch (error) {
-        console.error("Error creating user:", error);
+    } catch (error) {
+        console.error("Error finding user:", error);
         res.status(500).json({ message: "Internal Server Error" });
     }
-}
+};
+
 
 module.exports = {
     createUser,
