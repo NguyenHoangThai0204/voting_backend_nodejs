@@ -4,8 +4,7 @@ const mongoose = require('mongoose');
 const voteSchema = new mongoose.Schema({
   pollId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'ContentVoting', // Refer to the poll this vote is related to
-    required: true,
+    ref: 'ContentVoting' // Refer to the poll this vote is related to
   },
   optionId: {
     type: mongoose.Schema.Types.ObjectId,
