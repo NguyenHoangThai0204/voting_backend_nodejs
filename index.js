@@ -18,14 +18,15 @@ app.use(cors())
 app.use(morgan('common'))
 
 // 
-
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.use('/api/user',routerUser)
 
 app.use('/api/user',routerPoll)
 
 app.use('/api/user',routerVote)
-
 // Kết nối mongodb
 
 dotenv.config(); // dùng để đọc file .env
