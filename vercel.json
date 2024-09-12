@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" }
+  ],
   "routes": [
     { "src": "/api/user", "dest": "/voting_backend_nodejs/src/routes/UserRoute.js" },
     { "src": "/api/poll", "dest": "/voting_backend_nodejs/src/routes/PollRoute.js" },
