@@ -12,8 +12,6 @@ const routerVote = require("./src/routes/VoteRoute")
 
 app.use(bodyParser.json({limit: '50mb'}))
 
-
-
 app.use(cors())
 app.use(morgan('common'))
 
@@ -24,9 +22,9 @@ app.get('/', (req, res) => {
 
 app.use('/api/user',routerUser)
 
-app.use('/api/user',routerPoll)
+app.use('/api/poll',routerPoll)
 
-app.use('/api/user',routerVote)
+app.use('/api/vote',routerVote)
 // Kết nối mongodb
 
 dotenv.config(); // dùng để đọc file .env

@@ -5,7 +5,7 @@
   ],
   "routes": [
     { "src": "/api/user", "dest": "/voting_backend_nodejs/src/routes/UserRoute.js" },
-    { "src": "/api/user", "dest": "/voting_backend_nodejs/src/routes/PollRoute.js" },
-    { "src": "/api/user", "dest": "/voting_backend_nodejs/src/routes/VoteRoute.js" }
+    { "src": "/api/poll", "dest": "/voting_backend_nodejs/src/routes/PollRoute.js" },
+    { "src": "/api/vote", "dest": "/voting_backend_nodejs/src/routes/VoteRoute.js" }
   ]
 }
