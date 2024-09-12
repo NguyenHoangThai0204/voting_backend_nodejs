@@ -6,6 +6,7 @@
   "routes": [
     { "src": "/api/user/(.*)", "dest": "./index.js" },
     { "src": "/api/poll/(.*)", "dest": "./index.js" },
-    { "src": "/api/vote/(.*)", "dest": "./index.js" }
+    { "src": "/api/vote/(.*)", "dest": "./index.js" },
+    { "src": "/home", "dest": "/index.js" }
   ]
 }
