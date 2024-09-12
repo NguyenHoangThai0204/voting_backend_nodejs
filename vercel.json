@@ -4,8 +4,8 @@
     { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/user", "dest": "/voting_backend_nodejs/index.js" },
-    { "src": "/api/poll", "dest": "/voting_backend_nodejs/index.js" },
-    { "src": "/api/vote", "dest": "/voting_backend_nodejs/index.js" }
+    { "src": "/api/user/(.*)", "dest": "./index.js" },
+    { "src": "/api/poll/(.*)", "dest": "./index.js" },
+    { "src": "/api/vote/(.*)", "dest": "./index.js" }
   ]
 }
