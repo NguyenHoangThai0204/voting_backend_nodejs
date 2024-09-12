@@ -26,6 +26,9 @@ app.use('/api/poll',routerPoll)
 
 app.use('/api/vote',routerVote)
 // Kết nối mongodb
+app.use((req, res) => {
+  res.status(404).send("Route not found");
+});
 
 dotenv.config(); // dùng để đọc file .env
 
