@@ -22,10 +22,12 @@ app.use('/api/poll', routerPoll);
 app.use('/api/vote', routerVote);
 
 // Route mặc định
-app.get('/home', (req, res) => {
-  res.send('Hello World!');
+app.get('/home/hom/ho', (req, res) => {
+  res.send('Hello ho!');
 });
-
+app.get('/home/hom/hm', (req, res) => {
+  res.send('Hello hm!');
+});
 // Route không tìm thấy
 app.use((req, res) => {
   res.status(404).send("Route not found");
