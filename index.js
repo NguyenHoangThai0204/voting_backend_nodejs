@@ -22,7 +22,7 @@ app.use('/api/poll', routerPoll);
 app.use('/api/vote', routerVote);
 
 // Route mặc định
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
   res.send('Hello World!');
 });
 
