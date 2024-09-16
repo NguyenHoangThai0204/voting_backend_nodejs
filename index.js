@@ -20,9 +20,7 @@ app.use(morgan('common'));
 app.use('/api/user', routerUser);
 app.use('/api/poll', routerPoll);
 app.use('/api/vote', routerVote);
-app.use('/api/vote/home',(req, res) => {
-  res.status(404).send("Route sadf asdg ádgfound");
-});
+
 
 // Route không tìm thấy
 app.use((req, res) => {

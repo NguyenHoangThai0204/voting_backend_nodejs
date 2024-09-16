@@ -3,13 +3,13 @@ const bcrypt = require('bcrypt');
 
 const createUser = async (req, res) => {
     try {
-        const { email, password , fullName} = req.body;
+        const { email, password , fullName, role} = req.body;
         
         if (!email || !password) {
             return res.status(400).json({ message: "email and password are required." });
         }
                 
-        const newUser = new User({ email, password, fullName });
+        const newUser = new User({ email, password, fullName , role});
         await newUser.save(); // Lưu vào cơ sở dữ liệu
         
         res.status(200).json({status: "Ok",
@@ -112,5 +112,4 @@ module.exports = {
     loginUser,
     findAllUser,
     findByIdUser
-
 };

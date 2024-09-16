@@ -31,7 +31,14 @@ const userSchema = new mongoose.Schema({
   listVote:{
     type:[{id_vote:String}],
     default:[]
-  }
+  },
+  role: {
+    type: String,
+    default: "user",
+  },
+  status: {
+    type: String,
+  },
 });
 
 const User = mongoose.model("User", userSchema);
