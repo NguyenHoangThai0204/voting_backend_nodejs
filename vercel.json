@@ -13,7 +13,6 @@
     }
   ],
   "env": {
-    "MONGODB_URI": "mongodb+srv://voting_database:2002Thai%40@cluster0.ss9cw.mongodb.net/?retryWrites=true&w=majority",
-    "API_KEY": "@api-key"
+    "MONGO_DB": "mongodb+srv://voting_database:2002Thai%40@cluster0.ss9cw.mongodb.net/?retryWrites=true&w=majority"
   }
 }
