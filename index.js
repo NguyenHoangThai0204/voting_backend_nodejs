@@ -10,17 +10,20 @@ const routerUser = require("./src/routes/UserRoute");
 const routerPoll = require("./src/routes/PollRoute");
 const routerVote = require("./src/routes/VoteRoute");
 
-dotenv.config(); // Đọc file .env
+dotenv.config(); 
 
 app.use(bodyParser.json({ limit: '50mb' }));
-app.use(cors());
+app.use(cors({
+  origin: '*', // Thay thế bằng domain frontend của bạn
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức được phép
+  credentials: true // Cho phép gửi cookie hoặc thông tin xác thực nếu cần
+}));
 app.use(morgan('common'));
 
 // Định nghĩa các route
 app.use('/api/user', routerUser);
 app.use('/api/poll', routerPoll);
 app.use('/api/vote', routerVote);
-
 
 // Route không tìm thấy
 app.use((req, res) => {

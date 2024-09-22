@@ -63,7 +63,6 @@ const loginUser = async(req, res) =>{
 
 const findAllUser = async( req, res)=>{
     try {
-        
         const listUser = await User.find()
         res.status(200).json({
             status: "OK",
