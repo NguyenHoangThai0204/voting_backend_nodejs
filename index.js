@@ -14,9 +14,9 @@ dotenv.config();
 
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(cors({
-  origin: '*', // Thay thế bằng domain frontend của bạn
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức được phép
-  credentials: true // Cho phép gửi cookie hoặc thông tin xác thực nếu cần
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true 
 }));
 app.use(morgan('common'));
 

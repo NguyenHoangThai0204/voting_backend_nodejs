@@ -38,7 +38,20 @@ const userSchema = new mongoose.Schema({
   },
   status: {
     type: String,
+    default: "active",
   },
+  province: {
+    type: String,
+  },
+  district: {
+    type: String,
+  },
+  ward: {
+    type: String,
+  },
+  street: {
+    type: String,
+  }
 });
 
 const User = mongoose.model("User", userSchema);

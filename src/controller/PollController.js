@@ -29,6 +29,7 @@ exports.findAllPollingUser = async( req, res )=>{
         res.status(500).json({ message: "Internal Server Error" + error});
     }
 }
+
 exports.findAllPolling = async( req, res )=>{
     try {
         const listPolling = await ContentPoll.find();
@@ -42,9 +43,10 @@ exports.findAllPolling = async( req, res )=>{
         res.status(500).json({ message: "Internal Server Error" + error});
     }
 }
-exports.findByIdPolling = async( req, res )=>{
+
+exports.findByIdPolling = async (req, res) => {
     try {
-        const id = req.params.id;
+        const id = req.params.id;  // Lấy giá trị id từ params
         const Polling = await ContentPoll.findById(id);
         res.status(200).json({
             status: "OK",
@@ -52,8 +54,8 @@ exports.findByIdPolling = async( req, res )=>{
             data: Polling
         });
     } catch (error) {
-        console.error("Error creating user:", error);
-        res.status(500).json({ message: "Internal Server Error" + error});
+        console.error("Error finding polling:", error);
+        res.status(500).json({ message: "Internal Server Error: " + error });
     }
-}
+};
 
